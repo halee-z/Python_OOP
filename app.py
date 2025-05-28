@@ -67,3 +67,30 @@ class Parrot(Bird):
 for bird in [Sparrow(), Parrot()]:
     bird.sound()
 
+
+# Abstraction
+
+from abc import ABC, abstractmethod
+
+# Abstract class
+class Animal(ABC):
+    
+    @abstractmethod
+    def make_sound(self):  # Abstract method (no body)
+        pass
+
+# Child class
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof! Woof!")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
+
+# Creating objects
+d = Dog()
+d.make_sound()   # Output: Woof! Woof!
+
+c = Cat()
+c.make_sound()   # Output: Meow!
